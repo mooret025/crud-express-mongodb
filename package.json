@@ -1,0 +1,28 @@
+{
+  "name": "crud-express-mongodb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mooret025/crud-express-mongodb.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mooret025/crud-express-mongodb/issues"
+  },
+  "homepage": "https://github.com/mooret025/crud-express-mongodb#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.3",
+    "mongoose": "^5.11.5",
+    "nodemon": "^2.0.6"
+  }
+}
