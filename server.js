@@ -8,6 +8,15 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
     console.log('Connected to db');
 });
 
+const {Schema} = mongoose;
+
+const quotesSchema = new Schema({
+    name: {type: String},
+    quote: [String]
+});
+
+const Quote = mongoose.model('quotes', quotesSchema);
+
 app.listen(3000, () => console.log("lisening on 3000"));
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -17,5 +26,9 @@ app.get("/", (req, res) => {
 });
 
 app.post('/quotes', (req, res) => {
-    console.log(req.body);
+    const quote = new Quote(req.body);
+    quote.save((err, quote) => {
+        if (err) return console.error(err);
+        res.redirect('/');
+    });
 });
